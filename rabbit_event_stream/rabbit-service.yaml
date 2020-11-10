@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbit
+  # give different namespace when deploying in production.
+  namespace: default
+  labels:
+    # the name of the pod.
+    app: rabbitpod
+spec:
+  ports:
+  - name: http # simply a name.
+    port: 15672
+  - name: tcp  # simply a name.
+    port: 5672
+  selector:
+    # the name of the pod.
+    app: rabbitpod
+  # For local development without ngnix server, it is ok with type LoadBalancer.
+  # But for production, avoid adding a type loadBalancer, instead use ngnix proxy server.
+  type: LoadBalancer 

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server
+  # give different namespace when deploying in production.
+  namespace: default
+  labels:
+    # the name of the pod.
+    app: serverpod
+spec:
+  ports:
+  - port: 1337
+  selector:
+    # the name of the pod.
+    app: serverpod
+  # For local development without ngnix server, it is ok with type LoadBalancer.
+  # But for production, avoid adding a type loadBalancer, instead use ngnix proxy server.
+  type: LoadBalancer 

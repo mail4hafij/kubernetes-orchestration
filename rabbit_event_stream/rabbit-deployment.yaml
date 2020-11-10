@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitpod
+  # give different namespace when deploying in production.
+  namespace: default
+  labels:
+    app: rabbitpod
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: rabbitpod
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 2
+  template:
+    metadata:
+      labels:
+        app: rabbitpod
+    spec:
+      containers:
+      - name: rabbitpod
+        # location of your image.
+        image: rabbitmq:3-management
+        # pass all the environment variables.
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: esuser
+        - name: RABBITMQ_DEFAULT_PASS
+          value: espassword
+        # Container needs a volume.
+        volumeMounts:
+        - name: rabbit-logs
+          mountPath: /var/lib/rabbitmq 
+      restartPolicy: Always
+      volumes:
+      # attach the volume to a PVC
+      - name: rabbit-logs
+        persistentVolumeClaim:
+          claimName: rabbit-logs
