@@ -27,12 +27,12 @@ spec:
         image: hafij/images:internal_notification_service_src
         # pass all the environment variables.
         env:
-        - name: RABBITMQ_HOSTNAME
+        - name: RABBITMQ_HOST
           value: rabbit
         - name: RABBITMQ_USER
-          value: esuser
-        - name: RABBITMQ_PASSWORD
-          value: espassword
+          value: admin
+        - name: RABBITMQ_PASS
+          value: admin
         - name: ENVIRONMENT_MODE
           value: dev
         # Container needs a volume.

@@ -27,10 +27,11 @@ spec:
         image: rabbitmq:3-management
         # pass all the environment variables.
         env:
+          # You can set the default user and pass for rabbitmq  
         - name: RABBITMQ_DEFAULT_USER
-          value: esuser
+          value: admin
         - name: RABBITMQ_DEFAULT_PASS
-          value: espassword
+          value: admin
         # Container needs a volume.
         volumeMounts:
         - name: rabbit-logs

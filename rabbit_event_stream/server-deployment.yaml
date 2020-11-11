@@ -27,12 +27,12 @@ spec:
         image: hafij/images:rabbit_event_stream_server
         # pass all the environment variables.
         env:
-        - name: RABBITMQ_HOSTNAME
+        - name: RABBITMQ_HOST
           value: rabbit
         - name: RABBITMQ_USER
-          value: esuser
-        - name: RABBITMQ_PASSWORD
-          value: espassword
+          value: admin
+        - name: RABBITMQ_PASS
+          value: admin
         # Container needs a volume.
         volumeMounts:
         - name: server-logs
