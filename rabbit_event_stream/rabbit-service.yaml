@@ -6,7 +6,7 @@ metadata:
   namespace: default
   labels:
     # the name of the pod.
-    app: rabbitpod
+    app: rabbit-pod
 spec:
   ports:
   - name: http # simply a name.
@@ -15,7 +15,7 @@ spec:
     port: 5672
   selector:
     # the name of the pod.
-    app: rabbitpod
+    app: rabbit-pod
   # For local development without ngnix server, it is ok with type LoadBalancer.
   # But for production, avoid adding a type loadBalancer, instead use ngnix proxy server.
   type: LoadBalancer 

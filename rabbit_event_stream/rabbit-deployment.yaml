@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rabbitpod
+  name: rabbit-pod
   # give different namespace when deploying in production.
   namespace: default
   labels:
-    app: rabbitpod
+    app: rabbit-pod
 spec:
   replicas: 1
   selector: 
     matchLabels:
-      app: rabbitpod
+      app: rabbit-pod
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -19,10 +19,10 @@ spec:
   template:
     metadata:
       labels:
-        app: rabbitpod
+        app: rabbit-pod
     spec:
       containers:
-      - name: rabbitpod
+      - name: rabbit-pod
         # location of your image.
         image: rabbitmq:3-management
         # pass all the environment variables.

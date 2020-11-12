@@ -6,13 +6,13 @@ metadata:
   namespace: default
   labels:
     # the name of the pod.
-    app: serverpod
+    app: server-pod
 spec:
   ports:
   - port: 1337
   selector:
     # the name of the pod.
-    app: serverpod
+    app: server-pod
   # For local development without ngnix server, it is ok with type LoadBalancer.
   # But for production, avoid adding a type loadBalancer, instead use ngnix proxy server.
   type: LoadBalancer 

@@ -24,7 +24,7 @@ spec:
       containers:
       - name: notification-pod
         # location of your image.
-        image: hafij/images:internal_notification_service_src
+        image: hafij/images:notification_service_src
         # pass all the environment variables.
         env:
         - name: RABBITMQ_HOST

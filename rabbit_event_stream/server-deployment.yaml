@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: serverpod
+  name: server-pod
   # give different namespace when deploying in production.
   namespace: default
   labels:
-    app: serverpod
+    app: server-pod
 spec:
   replicas: 1
   selector: 
     matchLabels:
-      app: serverpod
+      app: server-pod
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -19,10 +19,10 @@ spec:
   template:
     metadata:
       labels:
-        app: serverpod
+        app: server-pod
     spec:
       containers:
-      - name: serverpod
+      - name: server-pod
         # location of your image.
         image: hafij/images:rabbit_event_stream_server
         # pass all the environment variables.
