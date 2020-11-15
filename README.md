@@ -1,5 +1,5 @@
 # kubernetes Orchestration
-The idea is to orchestrate microservices in Kubernetes. Please find the other repositories (https://github.com/mail4hafij/rabbit_event_stream, and https://github.com/mail4hafij/notification_service). Rabbit-event-stream repo, is a webserver which adds events to RabbitMQ. The Notification-service repo, is console app which sends slack notification and sends out emails. In this project, we are going to orchestrate all the microservices into Kubernetes. The example here covers, deployment to the local docker kubernetes service. So make appropriate changes when deploying to production clusters (i.e., Azure Managed Kubernetes).
+The idea is to orchestrate microservices in Kubernetes. Please find the other repositories (https://github.com/mail4hafij/rabbit_event_stream, and https://github.com/mail4hafij/notification_service). Rabbit-event-stream repo, is a webserver which adds events to RabbitMQ. The Notification-service repo, is a console app which sends slack notification and sends out emails. In this project, we are going to orchestrate both those microservices into Kubernetes. The example here covers, deployment to the local docker kubernetes service. So make appropriate changes when deploying to production clusters (i.e., Azure Managed Kubernetes).
 
 
 # TODO
