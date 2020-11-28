@@ -11,6 +11,6 @@ The idea is to orchestrate microservices in Kubernetes. Please find the other re
   6. Update the rabbit server image location in the rabbit_event_stream/server-deployment.yaml file (for now it is using my public image for rabbit_event_stream_server in dockerHub).
   7. Point the notification_service image in the notification_service/notificaiton-deployment.yaml file (for now it is using my public image for notification_service_src in dockerHub). 
   
- Done!  
+Disclaimer: I am using loadbalancer as the service type for rabbit-service.yaml, and server-service.yaml. But in production environment, you should avoid loadbalancer service type, rather use a reverse proxy to guide all external traffic to those services.
  
  <img src="Application.jpg" />
