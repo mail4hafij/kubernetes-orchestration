@@ -12,5 +12,6 @@ The idea is to orchestrate multiple micro services in Kubernetes. Please find th
   7. Point the notification-pod image in the *notification_service/notificaiton-deployment.yaml* file (for now it is using my public image for notification_service_src in dockerHub). 
   
 **Disclaimer:** I am using loadbalancer as the service type for *rabbit-service.yaml*, and *server-service.yaml*. But in production environment, you should avoid loadbalancer service type, rather use a reverse proxy to guide all external traffic to those services.
- 
- <img src="Application.jpg" />
+
+## Conceptual model
+<img src="Application.jpg" />
