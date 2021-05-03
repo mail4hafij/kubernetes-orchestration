@@ -19,6 +19,3 @@ The idea is to orchestrate multiple micro services in Kubernetes. Please find th
 ### Useful commands
 To get a yaml format of a service from Kubernetes
 ```kubectl get service servicename -n <namespace> -o yaml```
-
-To get a yaml format of a service from Kubernetes to file
-```kubectl get service servicename -n <namespace> -o yaml > service.yaml```
