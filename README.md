@@ -41,4 +41,9 @@ Deploy the pods -
 ```kubectl apply -f notification_service/notificaiton-deployment.yaml```
 
 To get a yaml format of a service from Kubernetes
+
 ```kubectl get service servicename -n <namespace> -o yaml```
+
+```kubectl get pod podname -n <namespace> -o yaml```
+
+etc ...
