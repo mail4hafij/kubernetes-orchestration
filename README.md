@@ -21,5 +21,20 @@ Rabbit-event-stream repo, is a webserver which adds events to RabbitMQ. The Noti
 <img src="Application.jpg" />
 
 ### Useful commands
+Considering the volume, service and the secrets are already in place (deployed before) in the cluster.
+
+Build the latest image with tag to your container registry.
+```docker build . -t {URL_TO_YOUR_CONTAINER_REGISTRY}:{PUT_YOUR_TAG_VERSION}```
+
+After building the image, push the image to your container registry
+```docker push {URL_TO_YOUR_CONTAINER_REGISTRY}:{PUT_YOUR_TAG_VERSION}```
+
+Deploy the pods,
+*rabbit_event_stream/server-deployment.yaml* - which should point to the latest image we have just pushed.
+```kubectl apply -f rabbit_event_stream/server-deployment.yaml```
+
+*notification_service/notificaiton-deployment.yaml* - which should point to the latest image we have just pushed.
+```kubectl apply -f notification_service/notificaiton-deployment.yaml```
+
 To get a yaml format of a service from Kubernetes
 ```kubectl get service servicename -n <namespace> -o yaml```
