@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: notifcation-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 200Mi
+  storageClassName: hafij-storage-class
+  hostPath:
+    path: /tmp/notification-pv
