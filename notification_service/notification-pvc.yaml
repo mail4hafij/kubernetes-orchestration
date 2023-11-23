@@ -11,3 +11,5 @@ spec:
   resources:
     requests:
       storage: 200Mi
+  storageClassName: hafij-storage-class
+  volumeName: notification-pv
