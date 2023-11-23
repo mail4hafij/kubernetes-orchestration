@@ -44,4 +44,4 @@ spec:
       # attach the volume to a PVC
       - name: src-logs
         persistentVolumeClaim:
-          claimName: src-logs
+          claimName: notification-pvc
