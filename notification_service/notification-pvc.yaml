@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: src-logs
+  name: notification-pvc
   annotations:
     # pvc based on previously created storage class.
     volume.beta.kubernetes.io/storage-class: hafij-storage-class
