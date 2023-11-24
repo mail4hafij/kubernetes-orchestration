@@ -12,4 +12,5 @@ spec:
     requests:
       storage: 200Mi
   storageClassName: hafij-storage-class
+  # attach the pvc to a persistent volume
   volumeName: notification-pv
